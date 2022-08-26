@@ -143,11 +143,12 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Use:** This ensures that the web page is parsed the same way by different web browsers. It must be the very first line of code in an HTML document(aside from comments, which can go before if needed).
   - **Example:** ##This is the doctype syntax for HTML5 and beyond: `<DOCTYPE html>`
   - **Source:** https//www.freecodecamp.org
+
 - [ ] How do you serve a page with content in multiple languages?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** By setting the lang attributes on various elements within the page.
+  - **Use:** The lang attribute can be defined anywhere in the document  eg: html, p, li..
+  - **Example:** The whole site for example can be set in english by setting the `<html lang="en">`
+  - **Source:** https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
 - [ ] What kinds of things must you be wary of when designing or developing for multilingual sites?
   - **Explanation:**
   - **Use:**
