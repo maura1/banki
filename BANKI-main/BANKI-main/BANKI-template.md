@@ -163,17 +163,27 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Use:**Respecting all users that user your site
   - **Example:**Colors are percieved differently accross languages and cultures.
   - **Source:**https://www.frontendinterviewhandbook.com/html-questions
-  
+
 - [ ] What are `data-` attributes good for?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** To store custom private data to the page or application.
+  - **Use:** They used to be used to store data in the DOM, but that is generally discouraged now, as the user could
+      modify the data attributes easily by using the inspect element in the browser.
+  - **Example:** A valid reason for using data attributes, is to add a hook for end to end testing fromeworks such 
+    as Selenium and Capybara without having to create meaningless classes or ID attributes.
+  - **Source:**https://www.frontendinterviewhandbook.com/html-questions
+
 - [ ] Consider HTML5 as an open web platform. What are the building blocks of HTML5?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+      - Semantics - Allowing you to describe more precisely what your content is.
+      - Connectivity - Allowing you to communicate with the server in new and innovative ways.
+      - Offline and storage - Allowing webpages to store data on the client-side locally and operate offline more          efficiently.
+      - Multimedia - Making video and audio first-class citizens in the Open Web.
+      - 2D/3D graphics and effects - Allowing a much more diverse range of presentation options.
+      - Performance and integration - Providing greater speed optimization and better usage of computer hardware.
+      - Device access - Allowing for the usage of various input and output devices.
+      - Styling - Letting authors write more sophisticated themes  
+  - **Source:**https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
 - [ ] Describe the difference between a cookie, sessionStorage and localStorage.
   - **Explanation:**
   - **Use:**
