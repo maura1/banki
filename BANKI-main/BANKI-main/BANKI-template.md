@@ -197,21 +197,33 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Why is it generally a good idea to position CSS `<link>`s within `<head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
   - **Explanation:**
+  `<script>`HTML parsing is blocked, script is fetched and executed immediately
+  `<script async>`script is fetched in paralled to HTML parsing and executed as soon as it is available.
+  `<script defer>`script fetched in paralled ot HTML parsing and executed when the page has finished parsing.
   - **Use:**
+  - Use `async`when the script is independent of any other scripts on the page
+  - Use `defer`when you need to ensure that the HTML is fully parsed before executing.
   - **Example:**
-  - **Source:**
+  - `async`could be used for analytical scripts.
+  - A defered script should not contain `document.write`
+    ##The async and defer attributes are ignored for scripts that have no `src`attributes.
+  - **Source:**https://www.frontendinterviewhandbook.com/html-questions
+
 - [ ] What is progressive rendering?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Have you used different HTML templating languages before?
   - **Explanation:**
   - **Use:**
