@@ -141,8 +141,8 @@ Most of the technical questions should have a three sentence response in the EUE
 - [ ] What does a doctype do?
   - **Explanation:**The DOCTYPE declaration is an instruction to the web browser about what version of HTML the page is   written in. 
   - **Use:** This ensures that the web page is parsed the same way by different web browsers. It must be the very first line of code in an HTML document(aside from comments, which can go before if needed).
-  - **Example:** ##This is the doctype syntax for HTML5 and beyond.-[<!Doctype html>]
-  - **Source:**freeCodeCamp.org
+  - **Example:** ##This is the doctype syntax for HTML5 and beyond: `<DOCTYPE html>`
+  - **Source:** https//www.freecodecamp.org
 - [ ] How do you serve a page with content in multiple languages?
   - **Explanation:**
   - **Use:**
