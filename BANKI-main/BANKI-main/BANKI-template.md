@@ -149,11 +149,21 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Use:** The lang attribute can be defined anywhere in the document  eg: html, p, li..
   - **Example:** The whole site for example can be set in english by setting the `<html lang="en">`
   - **Source:** https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
+
 - [ ] What kinds of things must you be wary of when designing or developing for multilingual sites?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:**Some nuances to pay attention to including:
+    - Including the `lang` attribute
+    - Allowing users to change the language
+    - Minimize text in raster based images
+    - Text overflow when translated
+    - How colors are perceived
+    - Date and currency formats
+    - Language reading direction
+    - Don't concatenate translated strings
+  - **Use:**Respecting all users that user your site
+  - **Example:**Colors are percieved differently accross languages and cultures.
+  - **Source:**https://www.frontendinterviewhandbook.com/html-questions
+  
 - [ ] What are `data-` attributes good for?
   - **Explanation:**
   - **Use:**
