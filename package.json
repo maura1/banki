@@ -1,0 +1,16 @@
+{
+  "name": "banki",
+  "version": "1.0.0",
+  "description": "Interview preperation questions",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"  
+  },
+  "author": "Maura Kummer",
+  "license": "ISC",
+
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
+
