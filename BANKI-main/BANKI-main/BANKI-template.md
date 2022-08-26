@@ -185,10 +185,13 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Source:**https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
 
 - [ ] Describe the difference between a cookie, sessionStorage and localStorage.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:**Cookies can be initiated by the server, have a manually set expiration date, a small file size and   are sent to the server with a HTTP request.
+  Local and session are both initiated by the client, are a relatively large file and are not sent to the server. 
+  Local storage persists forever until cleared manualy. 
+  Session storage is cleared when the tab is closed
+  - **Use:** They are all used for client side storage of strings in key-value pairs.
+  - **Source:**https://www.frontendinterviewhandbook.com/html-questions
+
 - [ ] Describe the difference between `<script>, <script async> and <script defer>`.
   - **Explanation:**
   - **Use:**
