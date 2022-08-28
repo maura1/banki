@@ -417,22 +417,18 @@ z-index: unset;
   - **Source:** https://www.frontendinterviewhandbook.com/
 
 - [ ] Describe what you like and dislike about the CSS preprocessors you have used.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:**Being able to split files and nest selectors is the most useful, it keeps the code more organized. A couple of downsides are that debugging is a little more difficult and having to wait for compilation.
+  
+  - **Source:**https://www.freecodecamp.org/news/css-preprocessors/
 
 - [ ] How would you implement a web design comp that uses non-standard fonts?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** Use @font-face and define font-family for different font-weights. 
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Explain how a browser determines what elements match a CSS selector.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** Browsers match selectors from rightmost (key selector) to left.
+  - **Example:**For example with this selector `p span`, browsers firstly find all the `<span>` elements and traverse up its parent all the way up to the root to find the `<p>` element. For a particular `<span>`, as soon as it finds a `<p>`, it knows that the `<span>` matches and can stop its matchin
+  - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Describe pseudo-elements and discuss what they are used for.
   - **Explanation:**
@@ -441,10 +437,10 @@ z-index: unset;
   - **Source:**
 
 - [ ] Explain your understanding of the box model and how you would tell the browser, through CSS, to render your layout in different box models.
-  - **Explanation:**
+  - **Explanation:** A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s)
   - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Example:**::first-line can be used to change the font of the first line of a paragraph
+  - **Source:**https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
 
 - [ ] What does `* { box-sizing: border-box; }` do? What are its advantages?
   - **Explanation:**
