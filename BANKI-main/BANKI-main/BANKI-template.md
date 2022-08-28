@@ -344,9 +344,11 @@ z-index: unset;
 
 - [ ] How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - Graceful degradation - The practice of building an application for modern browsers while ensuring it remains functional in older browsers.
+  - Progressive enhancement - The practice of building an application for a base level of user experience, but adding functional enhancements when a browser supports it.
+  - **Use:**checking [caniuse.com](https://caniuse.com/)  to know what if functional in each browser and using vendor prefixs and polyfills if required.
+  - **Example:**Replacing `<div>` with  more semantically appropriate tags like `<section> <aside> <article> <header> <footer>
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] What are the different ways to visually hide content (and make it available only for screen readers)?
   - **Explanation:**
