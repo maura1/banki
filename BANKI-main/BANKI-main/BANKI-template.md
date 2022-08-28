@@ -329,10 +329,10 @@ z-index: unset;
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Explain CSS sprites, and how you would implement them on a page or site.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** CSS Sprites are a means of combining multiple images into a single image file for use on a website, to help with performance.
+  - **Use:** Browsers limit the number of concurrent requests a site can make so leading several images with a single HTTP request helps increase page load speed.
+  - **Example:**An example would be combining press logo's for Wired, NY Times and The Washington Post into a single image file. Then on the site, with CSS, placing the file three times and moving/cropping it to display the applicable logo.
+  - **Source:**https://css-tricks.com/css-sprites/
 
 - [ ] How would you approach fixing browser-specific styling issues?
   - **Explanation:**
