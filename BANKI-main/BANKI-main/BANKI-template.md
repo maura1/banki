@@ -285,10 +285,26 @@ Alternatively, give overflow: auto or overflow: hidden property to the parent el
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Describe z-index and how stacking context is formed.
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:**The z-index property in CSS controls the vertical stacking order of overlapping HTML elements. z-index only affects elements that have a position value which is not static.
+  Elements with a higher index will be placed on top of elements with a lower index.
+
+  Without any z-index value, elements stack in the order that they appear in the DOM (the lowest one down at the same hierarchy level appears on top). Elements with non-static positioning (and their children) will always appear on top of elements with default static positioning, regardless of HTML hierarchy.
+  - **Use:**To determind in which order elements will be displayed on top of each order.
   - **Example:**
-  - **Source:**
+  /* Default value if not specified */
+z-index: auto;
+
+/* Integer values */
+z-index: 1;
+z-index: 100;
+z-index: 9999;
+z-index: -1;
+
+/* Global values */
+z-index: inherit;
+z-index: initial;
+z-index: unset;
+  - **Source:** https://www.freecodecamp.org/
 
 - [ ] Describe BFC (Block Formatting Context) and how it works.
   - **Explanation:**
