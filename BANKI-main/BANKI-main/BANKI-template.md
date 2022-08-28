@@ -431,22 +431,22 @@ z-index: unset;
   - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Describe pseudo-elements and discuss what they are used for.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-
-- [ ] Explain your understanding of the box model and how you would tell the browser, through CSS, to render your layout in different box models.
   - **Explanation:** A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s)
   - **Use:**
-  - **Example:**::first-line can be used to change the font of the first line of a paragraph
-  - **Source:**https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+  - **Example:****::first-line can be used to change the font of the first line of a paragraph
+  - **Source:****https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+
+- [ ] Explain your understanding of the box model and how you would tell the browser, through CSS, to render your layout in different box models.
+  - **Explanation:**The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model. Each box has a content area and optional surrounding padding, border, and margin areas.
+  - **Use:**The standard box model calculates box size by taking a specified `height` and `width`, then adding the padding and border. However to change to the alternative box model you would set `box-sizing: border-box` which allows you to set the box size with `height` and `width`.
+  - **Example:**
+  - **Source:** https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#what_is_the_css_box_model
 
 - [ ] What does `* { box-sizing: border-box; }` do? What are its advantages?
-  - **Explanation:**
+  - **Explanation:** It allows you to specify the actual width and height of a box using the `width` and `height` properties. This allows you to input true sizes and not have to do any math to take padding and borders into account
   - **Use:**
   - **Example:**
-  - **Source:**
+  - **Source:** https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#the_alternative_css_box_model
 
 - [ ] What is the CSS `display` property and can you give a few examples of its use?
   - **Explanation:**
