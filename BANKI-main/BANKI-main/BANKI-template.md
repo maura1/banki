@@ -233,155 +233,207 @@ Most of the technical questions should have a three sentence response in the EUE
 ### CSS
 
 - [ ] What is CSS selector specificity and how does it work?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** The means by which browsers decide which CSS property values are the most relevant to an element and, therefore, will be applied.
+  - **Use:** Specificity is a weight that is applied to a given CSS declaration, determined by the number of each selector type in the matching selector.
+  - **Example:** Id's count for 100, classes for 10 and tags 1, therefore a selector of `#id .class tag` would have 111 points as
+  - **Source:** https://www.sitepoint.com/css-selectors-specificity/
+
 - [ ] What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:**  "Normalize" alters the default styles of various browsers to match each other. "Reset" will remove the browsers default styles so you are starting from scratch.
+  - **Use:** Normalizing preserves useful default styles rather than "unstyling" everything. It also corrects bugs for common browser dependencies.
+   The main purpose of applying either "normalize" or "reset" is to try and make websites visually consistent across different browsers. A mix of both can be used, normalize to keep it conscise and then add some elements like anchors and headers with a reset.
   - **Example:**
-  - **Source:**
+  Normalize:
+  
+
+h1{
+  font-size:2em
+  margin : 1em;
+}
+ 
+
+Reset:
+
+``` 
+html, body, div, span, ..., audio, video {  
+   margin: 0;  
+   padding: 0;  
+   border: 0;  
+   font-size: 100%;  
+   font: inherit;  
+   vertical-align: baseline; 
+}
+```
+   **Source:**https://elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e
+
 - [ ] Describe floats and how they work.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Describe z-index and how stacking context is formed.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Describe BFC (Block Formatting Context) and how it works.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the various clearing techniques and which is appropriate for what context?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain CSS sprites, and how you would implement them on a page or site.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] How would you approach fixing browser-specific styling issues?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the different ways to visually hide content (and make it available only for screen readers)?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Have you ever used a grid system, and if so, what do you prefer?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Have you used or implemented media queries or mobile specific layouts/CSS?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Are you familiar with styling SVG?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Can you give an example of an `@media` property other than screen?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are some of the "gotchas" for writing efficient CSS?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the advantages/disadvantages of using CSS preprocessors?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Describe what you like and dislike about the CSS preprocessors you have used.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] How would you implement a web design comp that uses non-standard fonts?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain how a browser determines what elements match a CSS selector.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Describe pseudo-elements and discuss what they are used for.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain your understanding of the box model and how you would tell the browser, through CSS, to render your layout in different box models.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What does `* { box-sizing: border-box; }` do? What are its advantages?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is the CSS `display` property and can you give a few examples of its use?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What's the difference between `inline` and `inline-block`?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What's the difference between a `relative`, `fixed`, `absolute` and `static` positioned element?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Have you played around with the new CSS Flexbox or Grid specs?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Can you explain the difference between coding a web site to be responsive versus using a mobile-first strategy?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] How is responsive design different from adaptive design?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Have you ever worked with retina graphics? If so, when and what techniques did you use?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?
   - **Explanation:**
   - **Use:**
