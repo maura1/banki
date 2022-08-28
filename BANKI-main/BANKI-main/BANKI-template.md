@@ -360,10 +360,9 @@ z-index: unset;
   - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Have you ever used a grid system, and if so, what do you prefer?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:**Yes, it can be imlemented easily and helps to align, structure, and shape design
+  - **Use:** To eatablish a set of guidelines for how should be positioned within a layout.
+  - **Source:**https://css-tricks.com/snippets/css/complete-guide-grid/
 
 - [ ] Have you used or implemented media queries or mobile specific layouts/CSS?
   - **Explanation:**
