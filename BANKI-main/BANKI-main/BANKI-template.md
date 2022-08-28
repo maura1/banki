@@ -379,9 +379,21 @@ z-index: unset;
 
 - [ ] Can you give an example of an `@media` property other than screen?
   - **Explanation:**
+  Yes, there are four types of @media properties (including screen):
+  - all - for all media type devices
+  - print - for printers
+  - speech - for screenreaders that "reads" the page out loud
+  - screen - for computer screens, tablets, smart-phones etc.
   - **Use:**
   - **Example:**
-  - **Source:**
+  Here is an example of print media type's usage:
+
+@media print {
+  body {
+    color: black;
+  }
+}
+  - **Source:**https://www.frontendinterviewhandbook.com/css-questions
 
 - [ ] What are some of the "gotchas" for writing efficient CSS?
   - **Explanation:**
