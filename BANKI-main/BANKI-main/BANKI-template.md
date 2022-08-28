@@ -310,7 +310,7 @@ z-index: unset;
   - **Explanation:**
   It is part of the visual CSS rendering of a web page in which block boxes are laid out.
   Floats, absolutely positioned elements, inline-blocks, table-cells, table-captions, and elements with overflow other than visible (except when that value has been propagated to the viewport) establish new block formatting contexts.
-  
+
   A BFC is an HTML box that satisfies at least one of the following conditions:
     - The value of float is not none.
     - The value of position is neither static nor relative.
@@ -321,11 +321,12 @@ z-index: unset;
   - **Source:**https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
 
 - [ ] What are the various clearing techniques and which is appropriate for what context?
-  - **Explanation:** 
-      
-  - **Use:** .
-  - **Example:** 
-  - **Source:** 
+  - **Explanation:**  
+  - Empty div method - <div style="clear:both;"></div>.
+  - Clearfix method - Refer to the .clearfix class above.
+  - Overflow: auto or overflow: hidden method - Parent will establish a new block formatting context and expand to      contains its floated children.    
+  - **Use:** `.clearfix` utility class is probably the best method to use in general as it doesn't take long to construct and doesn't suffer from clipping issues like the overflow methods.
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Explain CSS sprites, and how you would implement them on a page or site.
   - **Explanation:**
