@@ -365,10 +365,10 @@ z-index: unset;
   - **Source:**https://css-tricks.com/snippets/css/complete-guide-grid/
 
 - [ ] Have you used or implemented media queries or mobile specific layouts/CSS?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:**Yes, frequently.
+  - **Use:** On every website and I mostly build mobile first. The breakpoints and media queries are then used to   convert the layout from mobile to desktop.
+  - **Example:** Sometimes elements that are positioned horizontally when shown on a desktop may need to be stacked when  displayed on a mobile device to make them more readable.
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Are you familiar with styling SVG?
   - **Explanation:**
