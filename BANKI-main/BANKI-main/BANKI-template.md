@@ -213,22 +213,22 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Source:**https://www.frontendinterviewhandbook.com/html-questions
 
 - [ ] What is progressive rendering?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** Techniques used to imporve performance of a web page to render content for display as quickly as possible.
+  - **Use:** Imporving perceived loadtime.
+  - **Example:** Lazy loading of images, prioritizing visible content ( or above-the-fold rendering) and async HTML fragments.
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 
 - [ ] Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** It is used when you want to serve different images to users depending on their device display width - 
+  - **Use:** Serve higher quality images to devices with retina display enhances the  user experience while serving lower resolution images to low-end devices increse performance and decrease data wastage(because serving a larger image will not have any visible difference)
+  - **Example:** `<img srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 2000w" src="..." alt="">`
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 
 - [ ] Have you used different HTML templating languages before?
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** EJS ans Handlebars They provide similar functionality of escaping content and helpful filters for manipulating the data to be displayed. Most templating engines will also allow you to inject your own filters in the event you need custom processing before display.
+  - **Use:** When using dynamic data.
   - **Example:**
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 
 ### CSS
 
