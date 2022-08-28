@@ -371,10 +371,11 @@ z-index: unset;
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Are you familiar with styling SVG?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** Yes, svg images can be printed with high quality at any resolution, they are zoomable.
+     Most importantly, they don't lose any quality if they are zoomed or reqized.
+  - **Use:**The infinite scalability of SVG is its greatest asset, so they can be easily used as a background image.
+  - **Example:**Often used as icons.
+  - **Source:**https://css-tricks.com
 
 - [ ] Can you give an example of an `@media` property other than screen?
   - **Explanation:**
