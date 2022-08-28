@@ -397,15 +397,24 @@ z-index: unset;
 
 - [ ] What are some of the "gotchas" for writing efficient CSS?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - Browsers match selectors from rightmost (key selector) to left. The shorter the length of the chain the faster the browser can find a match. Avoid using tag and universal selectors for your key selector.
+  
+  - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] What are the advantages/disadvantages of using CSS preprocessors?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+   Advantages:
+   - CSS easier to maintain.
+   - Easy to write nested selectors.
+   - Variables can be used for consistent theming. Can share theme files across different projects.
+   - Mixins can be used for repeated styles.
+   - Code can be split into different files.
+
+ Disadvantages:
+
+  - Additional tooling is required.
+  - No possible to use the most current features of standard CSS. 
+  - **Source:** https://www.frontendinterviewhandbook.com/
 
 - [ ] Describe what you like and dislike about the CSS preprocessors you have used.
   - **Explanation:**
