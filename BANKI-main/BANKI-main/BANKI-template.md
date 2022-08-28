@@ -308,15 +308,24 @@ z-index: unset;
 
 - [ ] Describe BFC (Block Formatting Context) and how it works.
   - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  It is part of the visual CSS rendering of a web page in which block boxes are laid out.
+  Floats, absolutely positioned elements, inline-blocks, table-cells, table-captions, and elements with overflow other than visible (except when that value has been propagated to the viewport) establish new block formatting contexts.
+  
+  A BFC is an HTML box that satisfies at least one of the following conditions:
+    - The value of float is not none.
+    - The value of position is neither static nor relative.
+    - The value of display is table-cell, table-caption, inline-block, flex, or inline-flex, grid, or inline-grid.
+    - The value of overflow is not visible.
+  - **Use:**Knowing how to establish a block formatting context is important, because without doing so, the containing box will not contain floated children
+  - **Example:** Without forming a BFC you could have content of a float that is taller than the content alongside it. The border of the parent element could then "cut-through" the floated box.
+  - **Source:**https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
 
 - [ ] What are the various clearing techniques and which is appropriate for what context?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** 
+      
+  - **Use:** .
+  - **Example:** 
+  - **Source:** 
 
 - [ ] Explain CSS sprites, and how you would implement them on a page or site.
   - **Explanation:**
