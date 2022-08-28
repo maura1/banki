@@ -267,10 +267,22 @@ html, body, div, span, ..., audio, video {
    **Source:**https://elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e
 
 - [ ] Describe floats and how they work.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** Float is a CSS positioning property where the element that is floated will be removed from the flow of the page and affect the elements around it. A parent element will collapse to zero height if it contains only floated elements, to fix this it was common to use a `.clearfix` hack.
+  The .clearfix hack uses a clever CSS pseudo selector (:after) to clear floats. Rather than setting the overflow on the parent, you apply an additional class clearfix to it. Then apply this CSS:
+```
+.clearfix:after {
+  content: ' ';
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+```
+Alternatively, give overflow: auto or overflow: hidden property to the parent element which will establish a new block formatting context inside the children and it will expand to contain its children.
+
+  - **Use:** It was used prior to flex and grid to layout pages in a more flexible manner.
+  - **Example:** To position three elemetns of equal width equally accross the page you could use float left  and give them widths of 33.3% .
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Describe z-index and how stacking context is formed.
   - **Explanation:**
