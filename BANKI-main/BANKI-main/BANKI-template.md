@@ -689,16 +689,18 @@ child.constructor.name;
              https://www.frontendinterviewhandbook.com/javascript-questions
 
 - [ ] What do you think of AMD vs CommonJS?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:**Both implement a module system.CommonJS is synchronous while AMD(Asynchronous Module Definition)is asynchronous. 
+  CommonJS is designed with server-side development in mind, while AMD with its support for asynchronous loading of modules, is more intended for browsers.AMD syntax is verbose. CommonJS is closer styles to Node style of writhing modules and there is less context switching between client side JS development
+  EMS(ECMAScipt Modules) has a simpler syntas ans async nature.
+  - **Use:**CommonJS has been used in node.js for a while, but the current version of node now allows the use of EMS:
+  - **Source:**https://www.frontendinterviewhandbook.com/javascript-questions
 
 - [ ] Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
-  - **Explanation:**
+  - **Explanation:**IIFE = Immediately Invoked Function Expressions
+  - The JS parser reads it as two seperate statements. First the function declaration `function foo(){}` and then a blank function call attempt `()`. The best way to fix this would be to add another set of parentheses wrapping the function declaration `(function foo(){})()`This changes it from a function declaration to a function expression.
   - **Use:**
   - **Example:**
-  - **Source:**
+  - **Source:**https://www.frontendinterviewhandbook.com/javascript-questions
 
 - [ ] What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
   - **Explanation:**
