@@ -449,196 +449,388 @@ z-index: unset;
   - **Source:** https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#the_alternative_css_box_model
 
 - [ ] What is the CSS `display` property and can you give a few examples of its use?
-  - **Explanation:**
+  - **Explanation:**  The display CSS property sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex.
   - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Example:** `display: block` would make the element consume the whole line width. `display: grid` would allow you to layout children in a grid system. If you wanted three columns you could pair it with something like `grid-template-columns: 1fr 1fr 1fr`
+  - **Source:** https://developer.mozilla.org/en-US/docs/Web/CSS/display
 
 - [ ] What's the difference between `inline` and `inline-block`?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:**- `inline`
+      - CANNOT specify width and height
+      - Can only set margin and padding for the sides, not top and bottom.
+    - `inline-block`
+      - CAN specify width and height
+      - Can set margin and padding on all sides
+  - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
+ 
 
 - [ ] What's the difference between a `relative`, `fixed`, `absolute` and `static` positioned element?
   - **Explanation:**
+    - Relative - Position is relative to it's original static position. Original space on the page is preserved.
+    - Fixed - Element removed from page flow and placed in spot relative to viewport. It won't move when scrolled.
+    - Absolute - Element removed from page flow and positioned relative to it closest "positioned" ancestor. Original space on the page is not preserved
+    - Static - The default position. `top`, `right`, `bottom`, `left` and `z-index` properties do not apply.
   - **Use:**
   - **Example:**
-  - **Source:**
+  - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
-  - **Explanation:**
+  - **Explanation:**Bootstrap - Slow release cycle. Bootstrap 4 has been in alpha for almost 2 years. Add a spinner button component, as it is widely used.
   - **Use:**
   - **Example:**
-  - **Source:**
+  - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Have you played around with the new CSS Flexbox or Grid specs?
-  - **Explanation:**
+  - **Explanation:**Yes. Flexbox is mainly meant for 1-dimensional layouts while Grid is meant for 2-dimensional layouts.
+
+Flexbox solves many common problems in CSS, such as vertical centering of elements within a container, sticky footer, etc. Bootstrap and Bulma are based on Flexbox, and it is probably the recommended way to create layouts these days. Have tried Flexbox before but ran into some browser incompatibility issues (Safari) in using flex-grow, and I had to rewrite my code using inline-blocks and math to calculate the widths in percentages, it wasn't a nice experience.
+
+Grid is by far the most intuitive approach for creating grid-based layouts (it better be!) but browser support is not wide at the moment.
   - **Use:**
   - **Example:**
-  - **Source:**
+  - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Can you explain the difference between coding a web site to be responsive versus using a mobile-first strategy?
   - **Explanation:**
+      Note that these two 2 approaches are not exclusive.
+
+Making a website responsive means that some elements will respond by adapting its size or other functionality according to the device's screen size, typically the viewport width, through CSS media queries, for example, making the font size smaller on smaller devices.
+
+@media (min-width: 601px) {
+  .my-class {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .my-class {
+    font-size: 12px;
+  }
+}
+A mobile-first strategy is also responsive, however it agrees we should default and define all the styles for mobile devices, and only add specific responsive rules to other devices later. Following the previous example:
+
+.my-class {
+  font-size: 12px;
+}
+
+@media (min-width: 600px) {
+  .my-class {
+    font-size: 24px;
+  }
+}
+
+A mobile-first strategy has 2 main advantages:
+
+It's more performant on mobile devices, since all the rules applied for them don't have to be validated against any media queries.
+It forces to write cleaner code in respect to responsive CSS rules.
   - **Use:**
   - **Example:**
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] How is responsive design different from adaptive design?
   - **Explanation:**
-  - **Use:**
+  Both responsive and adaptive design attempt to optimize the user experience across different devices, adjusting for different viewport sizes, resolutions, usage contexts, control mechanisms, and so on.
+
+Responsive design works on the principle of flexibility - a single fluid website that can look good on any device. Responsive websites use media queries, flexible grids, and responsive images to create a user experience that flexes and changes based on a multitude of factors. Like a single ball growing or shrinking to fit through several different hoops.
+
+Adaptive design is more like the modern definition of progressive enhancement. Instead of one flexible design, adaptive design detects the device and other features and then provides the appropriate feature and layout based on a predefined set of viewport sizes and other characteristics. The site detects the type of device used and delivers the pre-set layout for that device. Instead of a single ball going through several different-sized hoops, you'd have several different balls to use depending on the hoop size.
+  - **Use:**Both have these methods have some issues that need to be weighed:
+
+- Responsive design can be quite challenging, as you're essentially using a single albeit responsive layout to fit all situations. How to set the media query breakpoints is one such challenge. Do you use standardized breakpoint values? Or, do you use breakpoints that make sense to your particular layout? What if that layout changes?
+- Adaptive design generally requires user agent sniffing, or DPI detection, etc., all of which can prove unreliable.
   - **Example:**
-  - **Source:**
+  - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Have you ever worked with retina graphics? If so, when and what techniques did you use?
-  - **Explanation:**
+  - **Explanation:**Retina is just a marketing term to refer to high resolution screens with a pixel ratio bigger than 1. The key thing to know is that using a pixel ratio means these displays are emulating a lower resolution screen in order to show elements with the same size. Nowadays we consider all mobile devices retina defacto displays.
+
+Browsers by default render DOM elements according to the device resolution, except for images.
+
+In order to have crisp, good-looking graphics that make the best of retina displays we need to use high resolution images whenever possible. However using always the highest resolution images will have an impact on performance as more bytes will need to be sent over the wire.
+
+To overcome this problem, we can use responsive images, as specified in HTML5. It requires making available different resolution files of the same image to the browser and let it decide which image is best, using the html attribute srcset and optionally sizes, for instance:
+```<div responsive-background-image>
+  <img
+    src="/images/test-1600.jpg"
+    sizes="
+      (min-width: 768px) 50vw,
+      (min-width: 1024px) 66vw,
+      100vw"
+    srcset="
+      /images/test-400.jpg   400w,
+      /images/test-800.jpg   800w,
+      /images/test-1200.jpg 1200w
+    "
+  />
+</div>
+
+```
+It is important to note that browsers which don't support HTML5's srcset (i.e. IE11) will ignore it and use src instead. If we really need to support IE11 and we want to provide this feature for performance reasons, we can use a JavaScript polyfill, e.g. Picturefill (link in the references).
+
+For icons, I would also opt to use SVGs and icon fonts where possible, as they render very crisply regardless of resolution.
   - **Use:**
   - **Example:**
-  - **Source:**
+  - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
 
 - [ ] Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?
-  - **Explanation:**
+  - **Explanation:**translate() is a value of CSS transform. Changing transform or opacity does not trigger browser reflow or repaint but does trigger compositions; whereas changing the absolute positioning triggers reflow. transform causes the browser to create a GPU layer for the element but changing absolute positioning properties uses the CPU. Hence translate() is more efficient and will result in shorter paint times for smoother animations.
+
+When using translate(), the element still occupies its original space (sort of like position: relative), unlike in changing the absolute positioning.
   - **Use:**
   - **Example:**
-  - **Source:**
+  - **Source:**https://www.frontendinterviewhandbook.com/css-questions/
 
 ### Javascript
 
 - [ ] Explain event delegation
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+  - **Explanation:** It is used to handle events efficiently as it allowy you to avoid adding event listners to specific nodes, instead the event listener is added to one parent.The event listner analyzes bubbled events to find a match on child elements.
+  - **Use:**To reduce memory footprint as only one single handler is needed on the parent element, rather than having to attach event handlers on each descendant.
+  There is also no need to unbind the handler from elements that are removed and to bind the evnet for new elements.
+  - **Example:**We have a parent UL element with several child elements and something needs to happen when when each child element is clicked.
+  Instead of adding a seperate event listner to each individula LI element a better solution would be to add an event listner to the parent UL element. This would be very userful if adding and removing event listners was necessary and adding or removing code in different places was required.
+  To identify which child(LI)was clicked the target property would give the reference to the node clicked.
+
+  ```const customUI = document.createElement('ul');
+
+function responding(evt) {
+    if (evt.target.nodeName === 'li')
+        console.log('Responding')
+}
+
+for (var i = 1; i <= 10; i++) {
+    const newElement = document.createElement('li');
+    newElement.textContent = "This is line " + i;
+    customUI.appendChild(newElement);
+}
+
+customUI.addEventListener('click', responding);```
+
+  
+  - **Source:**https://www.geeksforgeeks.org/event-delegation-in-javascript/
+              https://davidwalsh.name/event-delegate
+
 - [ ] Explain how `this` works in JavaScript
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:**`this` references an object. When inside of a constructor function or class it will reference the object on instantiation.
+  - **Use:**It is used to assign properties and values to an object on instantiation
   - **Example:**
-  - **Source:**
+  - **Source:**https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+
 - [ ] Explain how prototypal inheritance works
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** In JavaScript, an object can inherit properties of another object. The object from where the properties are inherited is named protptype.All JS objects have a __proto__property with the exception of objects created with Object.create(null).
+  When a property is accessed on an objet and if the property is not found on the that abject, the JS engine looks at the object's __proto__, and the __proto__'s __proto__ and so on, until it finds teh property defined on one of the __proto__'s or until it reached the end of the property chain.
+  - **Use:**It solves the problem on data and logic duplication.By inheriting objects can share properties and method.
   - **Example:**
-  - **Source:**
+    function Parent() {
+  this.name = 'Parent';
+}
+
+Parent.prototype.greet = function () {
+  console.log('Hello from ' + this.name);
+};
+
+const child = Object.create(Parent.prototype);
+
+child.cry = function () {
+  console.log('waaaaaahhhh!');
+};
+
+child.cry();
+// waaaaaahhhh!
+
+child.greet();
+// hello from Parent
+
+child.constructor;
+// ƒ Parent() {
+//   this.name = 'Parent';
+// }
+
+child.constructor.name;
+// 'Parent'
+
+- .greet is not defined on the child, so the engine goes up the prototype chain and finds .greet
+off the inherited from the Parent.
+
+-.greet is not defined on the child, so the engine goes up the prototype chain and finds .greet off the inherited from Parent.
+We need to call Object.create in one of following ways for the prototype methods to be inherited:
+Object.create(Parent.prototype);
+Object.create(new Parent(null));
+Object.create(objLiteral);
+Currently, child.constructor is pointing to the Parent:
+
+If we'd like to correct this, one option would be to do:
+function Parent() {
+  this.name = 'Parent';
+}
+
+Parent.prototype.greet = function () {
+  console.log('Hello from ' + this.name);
+};
+
+function Child() {
+  Parent.call(this);
+  this.name = 'Child';
+}
+
+Child.prototype = Object.create(Parent.prototype);
+Child.prototype.constructor = Child;
+
+const child = new Child();
+
+child.greet();
+// hello from Child
+
+child.constructor.name;
+// 'Child'
+
+
+
+  - **Source:**https://davidwalsh.name/javascript-objects
+             https://www.frontendinterviewhandbook.com/javascript-questions
+
 - [ ] What do you think of AMD vs CommonJS?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a closure, and how/why would you use one?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Can you describe the main difference between a `.forEach()` loop and a `.map()` loop and why you would pick one versus the other?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What's a typical use case for anonymous functions?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] How do you organize your code? (module pattern, classical inheritance?)
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What's the difference between host objects and native objects?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What's the difference between `.call()` and `.apply()`?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain `Function.prototype.bind`.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] When would you use `document.write()`?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What's the difference between feature detection, feature inference, and using the UA string?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain Ajax in as much detail as possible.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the advantages and disadvantages of using Ajax?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain how JSONP works (and how it's not really Ajax).
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Have you ever used JavaScript templating? If so, what libraries have you used?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain "hoisting".
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Describe event bubbling.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What's the difference between an "attribute" and a "property"?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Why is extending built-in JavaScript objects not a good idea?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Difference between document `load` event and document `DOMContentLoaded` event?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is the difference between `==` and `===`?
   - **Explanation:**
   - **Use:**
   - **Example:**
-  - **Source:**
+  
 - [ ] Explain the same-origin policy with regards to JavaScript.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Make this work: `duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5] `
   - **Explanation:**
   - **Use:**
@@ -649,21 +841,25 @@ z-index: unset;
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is "use strict";? what are the advantages and disadvantages to using it?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
   - **Explanation:**
   - **Use:**
@@ -679,96 +875,115 @@ z-index: unset;
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the pros and cons of using Promises instead of callbacks?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What tools and techniques do you use debugging JavaScript code?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What language constructions do you use for iterating over object properties and array items?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain the difference between mutable and immutable objects.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain the difference between synchronous and asynchronous functions.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is event loop? What is the difference between call stack and task queue?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain the differences on the usage of foo between `function foo() {}` and `var foo = function() {}`
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the differences between variables created using `let`, `var` or `const`?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the differences between ES6 class and ES5 function constructors?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What advantage is there for using the arrow syntax for a method in a constructor?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is the definition of a higher-order function?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Can you give an example for destructuring an object or an array?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Can you give an example of a curry function and why this syntax offers an advantage?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the benefits of using spread syntax and how is it different from rest syntax?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] How can you share code between files?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Why you might want to create static class members?
   - **Explanation:**
   - **Use:**
@@ -782,26 +997,31 @@ z-index: unset;
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is functional programming?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is the difference between classical inheritance and prototypal inheritance?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the pros and cons of functional programming vs object-oriented programming?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are two-way data binding and one-way data flow, and how are they different?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is asynchronous programming, and why is it important in JavaScript?
   - **Explanation:**
   - **Use:**
@@ -815,131 +1035,157 @@ z-index: unset;
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Why use Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the features of Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] How do you update NPM to a new version in Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Why is Node.js Single-threaded?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain callback in Node.js.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is callback hell in Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] How do you prevent/fix callback hell?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain the role of REPL in Node.js.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Name the types of API functions in Node.js.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are the functionalities of NPM in Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is the difference between Node.js and Ajax?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are “streams” in Node.js? Explain the different types of streams present in Node.js.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Explain chaining in Node.js.
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are Globals in Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is Event-driven programming?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is Event loop in Node.js work? And How does it work?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is the purpose of `module.exports` in Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is the difference between Asynchronous and Non-blocking?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is Tracing in Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] How will you debug an application in Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Difference between `setImmediate()` and `setTimeout()`?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is `process.nextTick()`?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is package.json? What is it used for?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is libuv?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are some of the most popular modules of Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is `EventEmitter` in Node.js?
   - **Explanation:**
   - **Use:**
@@ -953,106 +1199,127 @@ z-index: unset;
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are types?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What are data structures?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is an algorithm?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is scope / lexical scope in javascript?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is polymorphism?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is encapsulation?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Linked List?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Doubly Linked List?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Queue?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Stack?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Hash Table?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Heap?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Trie?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Tree?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Binary Search Tree?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Disjoint Set?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] What is a Bloom Filter?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Demonstrate Bubble Sort and explain when you might use it?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Demonstrate Insertion Sort and explain when you might use it?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Demonstrate Merge Sort and explain when you might use it?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
+
 - [ ] Demonstrate Quicksort and explain when you might use it?
   - **Explanation:**
   - **Use:**
